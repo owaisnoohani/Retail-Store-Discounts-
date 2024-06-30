@@ -5,6 +5,8 @@ import RetailDiscountCalculator.repository.BillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BillService {
 
@@ -14,4 +16,5 @@ public class BillService {
     public Bill saveBill(Bill bill) {
         return billRepository.save(bill);
     }
+
 }

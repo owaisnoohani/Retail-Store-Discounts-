@@ -38,8 +38,10 @@ public class DiscountServiceTest {
         bill.setProducts(Arrays.asList(product1, product2));
 
         double discount = discountService.calculateTotalDiscount(bill);
-        assertEquals(75, discount); // 30% of 300 + $5 flat discount
+
+        assertEquals(105.0, discount);
     }
+
 
     @Test
     public void testAffiliateDiscountWithNonGroceries() {
@@ -82,8 +84,10 @@ public class DiscountServiceTest {
         bill.setProducts(Arrays.asList(product1, product2));
 
         double discount = discountService.calculateTotalDiscount(bill);
-        assertEquals(20, discount); // 5% of 300 + $10 flat discount
+
+        assertEquals(20.0, discount);
     }
+
 
     @Test
     public void testNoPercentageDiscountWithGroceries() {

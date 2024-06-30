@@ -1,0 +1,23 @@
+ ---------------------       -------------------       -------------------
+|      User           |     1 |      Product      |    *  |        Bill              |
+|---------------------| <>----|-------------------|------|---------------------      |
+| - id: Long          |       | - id: Long        |      | - id: Long                |
+| - name: String      |       | - name: String    |      | - user: User              |
+| - role: String      |       | - price: double   |      | - products: List<Product> |
+| - joiningDate: LocalDate | | - category: String|      ---------------------
+ ---------------------       -------------------                 |
+         |                           |                          ---------------------
+         |                           |                         |      DiscountService     |
+         |                           |                         |--------------------------|
+         |                           |                         | - calculateTotalDiscount()|
+         |                           |                         | - calculatePercentageDiscount()|
+         |                           |                         | - calculateFlatDiscount()|
+         |                           |                         --------------------------
+         |                    -------------------
+         |                   |    ProductCategory |
+         |                   |-------------------|
+         |                   | - name: String    |
+         |                   -------------------
+         |                           |
+         -----------------------------
+
