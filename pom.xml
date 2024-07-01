@@ -8,6 +8,15 @@
 		<version>3.3.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	<properties>
+
+			<java.version>17</java.version>
+
+		<sonar.host.url>http://localhost:9000</sonar.host.url> <!-- Update with your SonarQube server URL -->
+		<sonar.login>sqp_8e1e81cae828141e5581f5962232bca73210812d
+
+		</sonar.login> <!-- Replace with your authentication token -->
+	</properties>
 	<groupId>RetailDiscountCalculator</groupId>
 	<artifactId>RetailDiscountCalculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -26,9 +35,6 @@
 		<tag/>
 		<url/>
 	</scm>
-	<properties>
-		<java.version>17</java.version>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -87,6 +93,24 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<!-- Maven Compiler Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>17</source> <!-- Java version compatibility -->
+					<target>17</target>
+				</configuration>
+			</plugin>
+
+			<!-- SonarQube Scanner Plugin -->
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.9.1.2184</version> <!-- Replace with the latest version -->
+			</plugin>
+
 		</plugins>
 	</build>
 
